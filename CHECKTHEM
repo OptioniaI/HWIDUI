@@ -1,0 +1,59 @@
+local HWIDCHECK = Instance.new("ScreenGui")
+local MainUI = Instance.new("Frame")
+local HWIDBOX = Instance.new("TextBox")
+local Copy = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+
+HWIDCHECK.Name = "HWIDCHECK"
+HWIDCHECK.Parent = game.CoreGui
+HWIDCHECK.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+MainUI.Name = "MainUI"
+MainUI.Parent = HWIDCHECK
+MainUI.Active = true
+MainUI.Draggable = true
+MainUI.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+MainUI.BackgroundTransparency = 0.200
+MainUI.Position = UDim2.new(0.404208988, 0, 0.403718472, 0)
+MainUI.Size = UDim2.new(0, 263, 0, 144)
+
+HWIDBOX.Name = "HWIDBOX"
+HWIDBOX.Parent = MainUI
+HWIDBOX.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+HWIDBOX.BackgroundTransparency = 1.000
+HWIDBOX.Position = UDim2.new(0.121673003, 0, 0.215277776, 0)
+HWIDBOX.Size = UDim2.new(0, 200, 0, 32)
+HWIDBOX.ClearTextOnFocus = false
+HWIDBOX.TextEditable = false
+HWIDBOX.Font = Enum.Font.Gotham
+HWIDBOX.PlaceholderColor3 = Color3.fromRGB(255, 255, 255)
+HWIDBOX.PlaceholderText = "HWID..."
+HWIDBOX.Text = "HWID..."
+HWIDBOX.TextColor3 = Color3.fromRGB(255, 255, 255)
+HWIDBOX.TextScaled = true
+HWIDBOX.TextSize = 14.000
+HWIDBOX.TextWrapped = true
+
+Copy.Name = "Copy"
+Copy.Parent = MainUI
+Copy.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+Copy.BackgroundTransparency = 1.000
+Copy.BorderSizePixel = 0
+Copy.Position = UDim2.new(0.178707227, 0, 0.611111104, 0)
+Copy.Size = UDim2.new(0, 168, 0, 35)
+Copy.Font = Enum.Font.Gotham
+Copy.Text = "Copy!"
+Copy.TextColor3 = Color3.fromRGB(255, 255, 255)
+Copy.TextSize = 25.000
+
+UICorner.CornerRadius = UDim.new(0.0900000036, 0)
+UICorner.Parent = MainUI
+
+HWIDBOX.Text = game:GetService("RbxAnalyticsService"):GetClientId()
+
+Copy.MouseButton1Click:Connect(function()
+    setclipboard(HWIDBOX.Text)
+    HWIDBOX.Text = "Copied!"
+    task.wait(0.5)
+    HWIDBOX.Text = game:GetService("RbxAnalyticsService"):GetClientId()
+end)
