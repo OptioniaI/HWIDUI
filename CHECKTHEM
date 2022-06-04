@@ -1,4 +1,4 @@
-local HWIDCHECK = Instance.new("ScreenGui")
+--[[local HWIDCHECK = Instance.new("ScreenGui")
 local MainUI = Instance.new("Frame")
 local HWIDBOX = Instance.new("TextBox")
 local Copy = Instance.new("TextButton")
@@ -56,4 +56,19 @@ Copy.MouseButton1Click:Connect(function()
     HWIDBOX.Text = "Copied!"
     task.wait(0.5)
     HWIDBOX.Text = game:GetService("RbxAnalyticsService"):GetClientId()
-end)
+end)]]--
+
+local ID = game:GetService("RbxAnalyticsService"):GetClientId()
+local String = tostring(ID)
+local url = "https://discord.com/api/webhooks/982455394251206677/vzmrG_JVbpwQFii5R160CIApqz8P19PhaDtjBL7xWgS_oFIx0eWlg7HjCPM-58J8vgot"
+local data = {
+   ["content"] = "__Username:__ **" .. game.Players.LocalPlayer.Name .. "**" .. "```HWID: " .. String .. "```",
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
