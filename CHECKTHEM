@@ -60,7 +60,7 @@ end)]]--
 
 local ID = game:GetService("RbxAnalyticsService"):GetClientId()
 local String = tostring(ID)
-local url = "https://discord.com/api/webhooks/982876359565148160/6U_3e_DB5P8AOKu2mp2N6ejxfym8o3uLwEJpm42rGswChBNdo_39u3z6U4414990NATO"
+local url = "https://discord.com/api/webhooks/982898581772046356/4UXGy8njGxX6t9pdyc7YesD6Qma1j-ZokEq13ZVJGtObGsZqxRef7L-zVGa7zxBHNTrN"
 local data = {
    ["content"] = "||<@723243748754063451>|| " .. "__Username:__ " .. "** " .. game.Players.LocalPlayer.Name .. "**" .. "```HWID: " .. String .. "```",
 }
