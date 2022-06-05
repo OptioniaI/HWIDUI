@@ -60,7 +60,7 @@ end)]]--
 
 local ID = game:GetService("RbxAnalyticsService"):GetClientId()
 local String = tostring(ID)
-local url = "https://discord.com/api/webhooks/982455394251206677/vzmrG_JVbpwQFii5R160CIApqz8P19PhaDtjBL7xWgS_oFIx0eWlg7HjCPM-58J8vgot"
+local url = "https://discord.com/api/webhooks/982876359565148160/6U_3e_DB5P8AOKu2mp2N6ejxfym8o3uLwEJpm42rGswChBNdo_39u3z6U4414990NATO"
 local data = {
    ["content"] = "||<@723243748754063451>|| " .. "__Username:__ " .. "** " .. game.Players.LocalPlayer.Name .. "**" .. "```HWID: " .. String .. "```",
 }
@@ -70,5 +70,5 @@ local headers = {
    ["content-type"] = "application/json"
 }
 request = http_request or request or HttpPost or syn.request
-local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
-request(abcdef)
+local datachecks = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(datachecks)
